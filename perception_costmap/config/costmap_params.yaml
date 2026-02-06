@@ -1,0 +1,30 @@
+# ============================================================
+# Semantic Costmap Generation Node Parameters
+# ============================================================
+
+semantic_costmap_node:
+  ros__parameters:
+    # Input/Output topics
+    segmentation_topic: "/segmentation/color_mask"
+    depth_topic: "/camera/depth"
+    output_topic: "/costmap/semantic_map"
+
+    # Camera parameters
+    camera_fov_deg: 60.0       # Field of view (degrees)
+    camera_height_m: 1.5       # Camera height above ground (meters)
+    max_obstacle_height_m: 2.5 # Ignore obstacles taller than this
+
+    # Grid parameters
+    grid_resolution: 0.2       # Meters per cell
+    grid_width: 400            # Grid width (cells)
+    grid_height: 400           # Grid height (cells)
+    offset_behind_m: 10.0      # Map buffer behind robot (meters)
+
+    # Depth parameters
+    far_plane_m: 100.0         # Unity camera far plane (meters)
+    max_range_m: 500.0         # Max projection range (meters)
+
+    # Processing
+    update_rate_hz: 5.0        # Map publication rate
+    safety_bubble_m: 2.0       # Clear zone around robot (meters)
+    road_color_tolerance: 40   # Color matching tolerance (0-255)

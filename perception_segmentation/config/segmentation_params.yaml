@@ -1,0 +1,18 @@
+# ============================================================
+# PIDNet Semantic Segmentation Node Parameters
+# ============================================================
+# This config is loaded by the launch file and passed to the node.
+
+pidnet_tensorrt_node:
+  ros__parameters:
+    # Path to the TensorRT engine file
+    # Build with: trtexec --onnx=pidnet_l.onnx --saveEngine=pidnet_l.engine
+    engine_path: "/home/ai/sandbox/src/git_src/PIDNet/pidnet_l.engine"
+
+    # Model input dimensions (must match the engine build)
+    model_width: 1024
+    model_height: 512
+
+    # ROS2 topic names
+    input_topic: "/camera/image_raw"
+    output_topic: "/segmentation/color_mask"

@@ -1,0 +1,23 @@
+# ============================================================
+# Fusion Node Parameters
+# ============================================================
+
+# --- PointCloud Fusion ---
+pointcloud_fusion_node:
+  ros__parameters:
+    segmentation_topic: "/segmentation/color_mask"
+    depth_topic: "/camera/depth"
+    output_topic: "/fusion/semantic_cloud"
+    camera_fov_deg: 60.0
+    far_plane_m: 1000.0
+    frame_id: "camera_link"
+    update_rate_hz: 5.0
+
+# --- Visual Fusion (Overlay) ---
+visual_fusion_node:
+  ros__parameters:
+    image_topic: "/camera/image_raw"
+    segmentation_topic: "/segmentation/color_mask"
+    output_topic: "/fusion/visual_overlay"
+    blend_alpha: 0.7        # 70% original image, 30% segmentation
+    sync_slop: 0.1          # Time sync tolerance (seconds)

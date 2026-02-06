@@ -1,0 +1,22 @@
+# ============================================================
+# YOLOv11 TensorRT Node Parameters
+# ============================================================
+# This config is loaded by the launch file and passed to the node.
+# Modify these values to tune detection behavior.
+
+yolov11_tensorrt_node:
+  ros__parameters:
+    # Path to the TensorRT engine file
+    # Build with: trtexec --onnx=yolo11n.onnx --saveEngine=yolo11n.engine
+    engine_path: "yolo11n.engine"
+
+    # Minimum confidence score to keep a detection (0.0 - 1.0)
+    confidence_threshold: 0.5
+
+    # IoU threshold for Non-Maximum Suppression (0.0 - 1.0)
+    # Lower = more aggressive box removal
+    nms_threshold: 0.45
+
+    # ROS2 topic names
+    input_topic: "/camera/image_raw"
+    output_topic: "/yolo/detections"

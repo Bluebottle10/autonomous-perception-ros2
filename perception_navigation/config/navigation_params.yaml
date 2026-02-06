@@ -1,0 +1,24 @@
+# ============================================================
+# Navigation Node Parameters
+# ============================================================
+
+# --- Semantic Driver ---
+semantic_driver_node:
+  ros__parameters:
+    costmap_topic: "/costmap/semantic_map"
+    cmd_vel_topic: "/cmd_vel"
+    linear_speed: 0.3        # Forward speed (m/s)
+    steering_kp: 0.05        # Proportional steering gain
+    max_steering: 1.0        # Max angular velocity (rad/s)
+
+# --- TF Broadcaster ---
+tf_broadcaster_node:
+  ros__parameters:
+    odom_topic: "/odom"
+    camera_x_offset: 0.5     # Camera forward from base (meters)
+    camera_z_offset: 1.5     # Camera height from base (meters)
+
+# --- LiDAR Listener ---
+lidar_listener_node:
+  ros__parameters:
+    lidar_topic: "/scan_cloud"

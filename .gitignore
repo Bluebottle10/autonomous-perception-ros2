@@ -1,0 +1,35 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+
+# TensorRT engine files (too large for git — rebuild from ONNX)
+*.engine
+
+# ONNX models (optional: uncomment if you want to track them)
+# *.onnx
+
+# PyTorch checkpoints
+*.pt
+*.pth
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
